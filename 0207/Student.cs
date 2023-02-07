@@ -48,10 +48,30 @@ namespace _0207
         }
         public void Print()
         {
-            Console.Write("Имя города: " + name + "\nСтрана: " + country+"\nКоличество жителей: "+population+"\nТелефонный код: "+code+"\nРайоны:");
+            Console.Write("City name: " + name + "\nCountry: " + country+"\nPopulation: "+population+"\nPhone code: "+code+"\nRegions:");
             foreach(string i in regions)
             {
                 Console.Write(i+", ");
+            }
+        }
+
+        public void Input()
+        {
+            Console.WriteLine("Enter city name: ");
+            name = Console.ReadLine();
+            Console.WriteLine("Enter country: ");
+            country = Console.ReadLine();
+            Console.WriteLine("Enter population: ");
+            population = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter phone code: ");
+            code = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("How many regions?: ");
+            int regionnumber = Convert.ToInt32(Console.ReadLine());
+            string[] regions = new string[regionnumber];
+            for(int i = 0; i < regionnumber; i++)
+            {
+                Console.WriteLine("Enter region: ");
+                regions[i] = Console.ReadLine();
             }
         }
     }
