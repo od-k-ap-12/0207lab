@@ -13,26 +13,70 @@ namespace _0207
         private double population;
         private int code;
         private string[] regions;
+
+        public static City operator +(City opl, int op2)
+        {
+            City result = new City();
+            result.population = opl.population + op2;
+            return result;
+        }
+        public static City operator -(City opl, int op2)
+        {
+            City result = new City();
+            result.population = opl.population - op2;
+            return result;
+        }
+        public static bool operator <(City op1, City op2)
+        {
+            if (op1.population < op2.population)
+                return true;
+            else
+                return false;
+        }
+        public static bool operator >(City op1, City op2)
+        {
+            if (op1.population > op2.population)
+                return true;
+            else
+                return false;
+        }
+
+        public static bool operator ==(City op1, City op2)
+        {
+            if (op1.population == op2.population)
+                return true;
+            else
+                return false;
+        }
+
+        public static bool operator !=(City op1, City op2)
+        {
+            if (op1.population != op2.population)
+                return true;
+            else
+                return false;
+        }
+
         public override string ToString()
         {
             return "Имя города: " + name + "\nСтрана: " + country + "\nКоличество жителей: " + population + "\nТелефонный код: " + code;
         }
-        public string Name //prop
+        public string Name 
         {
             get => name;
             set => name = value;
         }
-        public string Country //prop
+        public string Country 
         {
             get => country;
             set => country = value;
         }
-        public double Population //prop
+        public double Population
         {
             get => population;
             set => population = value;
         }
-        public int Code //prop
+        public int Code 
         {
             get => code;
             set => code = value;
